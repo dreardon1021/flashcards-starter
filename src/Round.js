@@ -18,9 +18,9 @@ class Round {
     } else {
       this.incorrectGuesses.push(turn.card.id);
     }
-    const result = turn.giveFeedBack();
+    const feedBack = turn.giveFeedBack();
     this.turns ++;
-    return result;
+    return feedBack;
   }
 };
 
