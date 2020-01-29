@@ -93,11 +93,34 @@ describe('Round', function() {
     const card1 = new Card(1, 'What is Robbie\'s favorite animal',
       ['sea otter', 'pug', 'capybara'], 'sea otter');
     const card2 = new Card(5, "What type of prototype method loops through the existing array and applies a callback function that may mutate each element and return a new value?",
-      ["mutator method", "accessor method", "iteration method"], "iteration method")
-    const deck = new Deck([card1, card2])
+      ["mutator method", "accessor method", "iteration method"], "iteration method");
+    const deck = new Deck([card1, card2]);
+    const round = new Round(deck);
+    expect(round.takeTurn('sea otter')).to.equal('Correct!');
+    expect(round.returnCurrentCard()).to.equal(card2);
+  });
+
+  it('should be able to calculate the users correct percent', function() {
+    const card1 = new Card(1, 'What is Robbie\'s favorite animal',
+      ['sea otter', 'pug', 'capybara'], 'sea otter');
+    const card2 = new Card(5, "What type of prototype method loops through the existing array and applies a callback function that may mutate each element and return a new value?",
+      ["mutator method", "accessor method", "iteration method"], "iteration method");
+    const deck = new Deck([card1, card2]);
     const round = new Round(deck);
     round.takeTurn('sea otter');
-    expect(round.takeTurn('sea otter')).to.equal('Correct!')
-    expect(round.returnCurrentCard()).to.equal(card2)
+    round.takeTurn('mutator method');
+    expect(round.calculatePercentCorrect()).to.equal(50)
+  });
+
+  it('should be able to return end of round message', function() {
+    const card1 = new Card(1, 'What is Robbie\'s favorite animal',
+      ['sea otter', 'pug', 'capybara'], 'sea otter');
+    const card2 = new Card(5, "What type of prototype method loops through the existing array and applies a callback function that may mutate each element and return a new value?",
+      ["mutator method", "accessor method", "iteration method"], "iteration method");
+    const deck = new Deck([card1, card2]);
+    const round = new Round(deck);
+    round.takeTurn('sea otter');
+    round.takeTurn('mutator method');
+    expect(round.endRound()).to.equal(`** Round over! ** You answered 50% of the questions correctly!`)
   })
 });
