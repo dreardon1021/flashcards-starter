@@ -1,4 +1,5 @@
 /* eslint-disable no-extra-semi */
+
 class Deck {
   constructor(cards) {
     this.cards = cards || [];

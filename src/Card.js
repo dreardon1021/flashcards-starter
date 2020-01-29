@@ -1,4 +1,5 @@
 /* eslint-disable no-extra-semi */
+
 class Card {
   constructor(id, question, answers, correctAnswer) {
     this.id = id;

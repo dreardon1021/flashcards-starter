@@ -1,9 +1,8 @@
 const chai = require('chai');
 const expect = chai.expect;
 
-const Turn = require('../src/Turn');
+
 const Card = require('../src/Card');
-const Round = require('../src/Round')
 const Deck = require('../src/Deck')
 
 
@@ -12,7 +11,7 @@ const Deck = require('../src/Deck')
     expect(Deck).to.be.a('function');
   });
 
-  it('should be an instance of Turn', function() {
+  it('should be an instance of Deck', function() {
     const deck = new Deck();
     expect(deck).to.be.an.instanceof(Deck);
   });
@@ -38,6 +37,6 @@ const Deck = require('../src/Deck')
       ['sea otter', 'pug', 'capybara'], 'capybara');
     const deck = new Deck([card1, card2]);
     deck.countCards()
-    expect(deck.countCards()).to.equal(deck.cards.length);
+    expect(deck.countCards()).to.equal(2);
   });
 });
