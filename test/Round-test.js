@@ -55,5 +55,5 @@ describe('Round', function() {
     expect(round.takeTurn('sea otter')).to.equal('Correct!')
   });
 
-  it('should move guess to ')
+  it('should move correct guess to ')
 });
