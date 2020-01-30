@@ -12,4 +12,4 @@ describe('Game', function() {
     expect(game.cards[0].correctAnswer).to.equal('object')
     expect(game.cards.length).to.equal(30)
   });
-});  
+});
