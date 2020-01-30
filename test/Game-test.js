@@ -1,14 +1,15 @@
 const chai = require('chai');
 const expect = chai.expect;
 
-const Card = require('../src/Card');
-const Round = require('../src/Round');
-const Deck = require('../src/Deck');
 const Game = require('../src/Game');
 
 describe('Game', function() {
-  it('should be able to keep track of current round', function() {
+  it('should be able to keep track of current round create a card and create a deck', function() {
     const game = new Game();
     game.start();
+
+    expect(game.currentRound).to.equal(0)
+    expect(game.cards[0].correctAnswer).to.equal('object')
+    expect(game.cards.length).to.equal(30)
   });
-});
+});  

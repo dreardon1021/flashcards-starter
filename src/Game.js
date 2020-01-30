@@ -32,6 +32,7 @@ class Game {
     this.printMessage(deck, round);
     this.printQuestion(round);
   };
+  
 };
 
 module.exports = Game;
