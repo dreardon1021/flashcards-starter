@@ -8,7 +8,7 @@ describe('Game', function() {
     const game = new Game();
     game.start();
 
-    expect(game.currentRound).to.equal(0)
+    expect(game.currentRound.turns).to.equal(0)
     expect(game.cards[0].correctAnswer).to.equal('object')
     expect(game.cards.length).to.equal(30)
   });

@@ -28,11 +28,11 @@ class Game {
     }
     let deck = new Deck(this.cards);
     let round = new Round(deck);
-    this.currentRound = round.turns;
+    this.currentRound = round;
     this.printMessage(deck, round);
     this.printQuestion(round);
   };
-  
+
 };
 
 module.exports = Game;
